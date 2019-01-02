@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :find_user, only: [:show, :update, :destroy]
 
   def main
   end
@@ -7,16 +8,13 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def login
-  end
-
   def show
-    find_user
     render "my_listings"
   end
 
   def create
-    @user = User.create(listing_params)
+    @user = User.create(user_params)
+    session[:user_id] = @user.id
     redirect_to user_path(@user)
   end
 
@@ -26,7 +24,8 @@ class UsersController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    @user.destroy
   end
 
   private
@@ -36,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :email, :password)
   end
 
 end

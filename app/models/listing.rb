@@ -9,6 +9,5 @@ class Listing < ApplicationRecord
 
   def find_user
     user = User.find(self.user_id)
-    user.name
   end
 end

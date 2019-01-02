@@ -4,6 +4,10 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end
 
+  def categories
+    @categories = Category.all
+  end
+
   def new
     @listing = Listing.new
   end
