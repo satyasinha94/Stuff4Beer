@@ -6,32 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# create_table "categories", force: :cascade do |t|
-#   t.string "name"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
-#
-# create_table "comments", force: :cascade do |t|
-#   t.text "body"
-#   t.integer "user_id"
-#   t.integer "listing_id"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
-#
-# create_table "listings", force: :cascade do |t|
-#   t.string "title"
-#   t.text "body"
-#   t.integer "user_id"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
-#
-# create_table "users", force: :cascade do |t|
-#   t.string "name"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
 
-Listing.create(title: l1, text: "this is my listing")
+
+
+# Listing.create(title: "l2", body: "4gh43h", user_id: 1)
+# Listing.create(title: "l3", body: "4gh4nhtn3h", user_id: 1)
+# Listing.create(title: "l4", body: "4grwegwh43h", user_id: 1)
+
+# Category.create(name: "Beer")
+# Category.create(name: "Wine")
+# Category.create(name: "Whiskey")
+# Category.create(name: "Rum")
+# Category.create(name: "Tequila")
+# Category.create(name: "Gin")
+
+User.create(name: "Satya")
+
+Listing.create(title: "l2", body: "4gh43h", user_id: 1, category_id: 1)
+Listing.create(title: "l3", body: "4gh4nhtn3h", user_id: 1, category_id: 2)
+Listing.create(title: "l4", body: "4grwegwh43h", user_id: 1, category_id: 3)
