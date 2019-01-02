@@ -1,4 +1,21 @@
 <h1>Welcome to Stuff4Beer</h1>
+<p><% unless logged_in?  %>
+  <%=link_to "Login", login_path %></p>
+  <% end %>
+<p><%unless logged_in? %>
+  <%=link_to "Register", register_path %></p>
+  <% end %>
 <p><%=link_to "Listings", listings_path %> </p>
-<p><%=link_to "Login/Register", login_path %></p>
 <p><%=link_to "Categories", categories_path %></p>
+<p><%=link_to "New Listing", new_listing_path %></p>
+
+<p><% if logged_in? %>
+<%=link_to "My Listings", user_path(current_user)  %>
+<% end %>
+</p>
+
+<p>
+<% if logged_in? %>
+<%= button_to "Logout", logout_path, method: :delete %>
+<% end %>
+</p>

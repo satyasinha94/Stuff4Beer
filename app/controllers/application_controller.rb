@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # before_action :authorized #lock down this whole app
-  helper_method :current_user #i can call current_user from a view
+  helper_method :current_user, :logged_in? #i can call current_user from a view
 
   def current_user
     # User.find would throw an error if we cannot find the user

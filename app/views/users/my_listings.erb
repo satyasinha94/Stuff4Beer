@@ -1,8 +1,10 @@
-<h1>Your listings</h1>
+<h1>Hi <%= @user.name %></h1>
+<h2>Your listings</h2>
 <%@user.listings.each do |listing| %>
 <ul>
     <li><%= link_to listing.title, listing_path(listing) %></li>
 </ul>
 <% end %>
 
-<%= link_to "New Listing", new_listing_path %>
+<%= link_to "New Listing", new_listing_path %> <br> <br>
+<%= link_to "Homepage", main_path %>

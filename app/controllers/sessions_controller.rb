@@ -3,18 +3,22 @@ class SessionsController < ApplicationController
 
   # skip_before_action :authorized, only: [:new, :create]
 
-  def new
-    render :new
+  def register
+    render :register
+  end
+
+  def login
+    render :login
   end
 
   def create #handles the POST request to /login
-    byebug
-    @user = User.find_by(name: params[:name])
-    if @user && @user.authenticate(params[:password])
+    # byebug
+    @user = User.find_or_create_by(name: params[:name])
+    if @user #&& @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to @user
     else
-      flash[:notice] = 'Invalid username or password'
+      flash[:notice] = "Can't find user!"
       redirect_to login_path
     end
   end
@@ -22,8 +26,7 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     # session[:user_id] = nil
-    flash[:notice] = 'u logged out'
-    redirect_to login_path
+    redirect_to main_path
   end
 
 end

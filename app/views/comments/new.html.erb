@@ -1,0 +1,6 @@
+<%= form_for @comment do |f| %>
+  Comment: <%= f.text_area :body %> <br> <br>
+  Listing: <%=f.collection_select(:listing_id, Listing.all, :id, :title) %> <br> <br>
+  User: <%=f.collection_select(:user_id, User.all, :id, :name) %> <br> <br>
+  <%= f.submit %>
+<% end %>
