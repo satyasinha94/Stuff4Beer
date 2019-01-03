@@ -12,15 +12,20 @@ class SessionsController < ApplicationController
   end
 
   def create #handles the POST request to /login
-    # byebug
-    @user = User.find_or_create_by(name: params[:name])
+    @user = User.find_by(name: params[:name])
     if @user #&& @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to @user
-    else
+    elsif !@user
       flash[:notice] = "Can't find user!"
       redirect_to login_path
     end
+  end
+
+  def create_new#handles the POST request to /login
+    @user = User.create(name: params[:name], email: params[:email], password: params[:password])
+    session[:user_id] = @user.id
+    redirect_to @user
   end
 
   def destroy
