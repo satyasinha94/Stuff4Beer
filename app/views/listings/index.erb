@@ -1,13 +1,7 @@
 
   <h1>All Listings</h1>
-  <div class="new-listing">
-    <%=link_to "New Listing", new_listing_path%>
-  </div>
-
-<div class="listing-index">
   <%@listings.each do |listing| %>
-  <div class="listing-number">
-    <p><%=link_to listing.title, listing_path(listing) %></p>
-  </div>
+  <ul>
+    <li><%=link_to listing.title, listing_path(listing) %> - <%= listing.date_time %></li>
+  </ul>
   <% end %>
-</div>

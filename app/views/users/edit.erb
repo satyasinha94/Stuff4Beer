@@ -1,10 +1,12 @@
-<h1 class = text-center >Edit User </h1>
+<h1> Edit User Info </h1>
+  <div class="user-form">
 <%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br> <br>
+  <%= f.label :email %> <br>
+  <%= f.text_field :email %> <br> <br>
+  <%= f.label :password %> <br>
+  <%= f.password_field :password %> <br> <br>
   <%= f.submit %>
 <% end %>
+</div>

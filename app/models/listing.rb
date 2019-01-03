@@ -11,4 +11,8 @@ class Listing < ApplicationRecord
   def find_user
     user = User.find(self.user_id)
   end
+
+  def date_time
+    self.created_at.strftime("%B %d %Y")
+  end
 end

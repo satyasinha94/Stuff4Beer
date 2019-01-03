@@ -57,6 +57,27 @@ label {
   width: 150px;
   text-align: center;
 }
+
+.category-img-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.category-img-column {
+  flex: 16.67%;
+  max-width: 16.67%;
+  padding: 0 4px;
+}
+
+.category-img-column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+
 //End of Category styling
 
 
@@ -92,23 +113,43 @@ label {
 .listing-form input {
   border-style: outset;
 }
+
+.listing-info p {
+  font-weight: bold;
+  margin-top: 15px;
+}
 //
 
-//listing-index styling
-.listing-index {
+//comment-form styling
+.comment-form {
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.listing-index p{
-  font-size: 2em;
-}
-
-.listing-number {
-  width: 150px;
   text-align: center;
 }
-// end of listing-index styling
+
+.comment-form label {
+  font-size: 1.25em;
+  margin-top: 7.5px;
+}
+.comment-form input {
+  border-style: outset;
+}
+// end of comment-form styling
+
+.cheers-img img {
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.user-auth {
+  display: flex;
+}
+.user-auth > div {
+  flex: 1; /*grow*/
+}

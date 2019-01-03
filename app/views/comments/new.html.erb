@@ -1,6 +1,12 @@
+<h1>Add a comment</h1>
+<div class="comment-form">
 <%= form_for @comment do |f| %>
-  Comment: <%= f.text_area :body %> <br> <br>
-  Listing: <%=f.collection_select(:listing_id, Listing.all, :id, :title) %> <br> <br>
-  User: <%=f.collection_select(:user_id, User.all, :id, :name) %> <br> <br>
+  <%= f.label :comment %> <br>
+   <%= f.text_area :body %> <br> <br>
+  <%= f.label :listing %> <br>
+   <%=f.collection_select(:listing_id, Listing.all, :id, :title) %> <br> <br>
+  <%= f.label :user %> <br>
+   <%=f.collection_select(:user_id, User.all, :id, :name) %> <br> <br>
   <%= f.submit %>
 <% end %>
+</div>
