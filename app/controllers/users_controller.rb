@@ -22,10 +22,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    current_user.update(user_params)
+    redirect_to main_path
   end
 
   def destroy
-    @user.destroy
+    current_user.destroy
+    redirect_to main_path
   end
 
   private

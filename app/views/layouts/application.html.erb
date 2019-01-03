@@ -30,6 +30,12 @@
       <li class="nav-item">
         <a class="nav-link" <%= link_to "Logout", logout_path, method: :delete %></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Edit User", edit_user_path(current_user) %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Delete Account", user_path(current_user), method: :delete, data: {confirm: "Are you sure you want to delete your account?"}%></a>
+      </li>
     </ul>
       <% else %>
       <li class="nav-item">

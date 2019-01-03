@@ -1,1 +1,77 @@
+/* ...
+*= require_self
+*= require_tree .
+*/
 @import 'bootstrap';
+@import 'categories';
+@import 'comments';
+@import 'listings';
+@import 'sessions';
+@import 'users';
+
+// Whole Website styling
+body  {
+  background-image: radial-gradient( circle farthest-corner at 12.3% 19.3%,  rgba(85,88,218,1) 0%, rgba(95,209,249,1) 100.2% );
+}
+
+h1 {
+  text-align: center;
+  font-style: italic;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+.btn {
+  color: black;
+  font-weight: bold;
+}
+
+input {
+  font-weight: bold;
+
+}
+
+label {
+  font-weight: bold;
+}
+// end of whole website styling
+
+// Category styling
+.category-index {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-index p{
+  font-size: 2em;
+}
+
+.alcohol-type {
+  width: 150px;
+  text-align: center;
+}
+//End of Category styling
+
+
+// Login/Register styling
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 50px
+}
+
+.form label {
+  font-size: 1.25em
+}
+.form input {
+  border-style: outset;
+}
+//

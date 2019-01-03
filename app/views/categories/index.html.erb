@@ -1,4 +1,9 @@
-<h1>Categories</h1>
-<%@categories.each do |category| %>
-<h2><%=link_to category.name, category_path(category) %></h2>
-<% end %>
+
+  <h1>Categories</h1>
+  <div class="category-index">
+  <%@categories.each do |category| %>
+    <div class="alcohol-type">
+      <p><%=link_to category.name, category_path(category) %></p>
+    </div>
+    <% end %>
+  </div>

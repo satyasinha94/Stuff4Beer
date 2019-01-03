@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def create_new#handles the POST request to /login
+  def create_new #handles the POST request to /register
     @user = User.create(name: params[:name], email: params[:email], password: params[:password])
     session[:user_id] = @user.id
     redirect_to @user
@@ -30,7 +30,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    # session[:user_id] = nil
     redirect_to main_path
   end
 
