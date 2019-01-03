@@ -1,25 +1,11 @@
 
-<body class= 'text-center'>
-  <h1>Welcome to Stuff4Beer</h1>
-  <h2>Trade Alcohol for stuff (or other alcohol)</h2>
-  <p><% unless logged_in?  %>
-    <%=link_to "Login", login_path %></p>
-    <% end %>
-  <p><%unless logged_in? %>
-    <%=link_to "Register", register_path %></p>
-    <% end %>
-  <p><%=link_to "Listings", listings_path %> </p>
-  <p><%=link_to "Categories", categories_path %></p>
-  <p><%=link_to "New Listing", new_listing_path %></p>
-
-  <p><% if logged_in? %>
-  <%=link_to "My Listings", user_path(current_user)  %>
-  <% end %>
-  </p>
-
-  <p>
+<body class= "text-center">
   <% if logged_in? %>
-  <%= button_to "Logout", logout_path, method: :delete %>
+  <h1><%="Hi #{current_user.name}" %></h1>
+  <h2>Welcome to Stuff4Beer</h2>
+  <img src="https://i.pinimg.com/originals/53/3b/12/533b12149ec3deaebb978dd782d05386.gif" alt="Steve Brule">
+  <% else %>
+  <h1>Welcome to Stuff4Beer</h1>
+  <img src="https://i.pinimg.com/originals/53/3b/12/533b12149ec3deaebb978dd782d05386.gif" alt="Steve Brule">
   <% end %>
-  </p>
 </body>
