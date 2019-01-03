@@ -1,5 +1,8 @@
-<h1>All Listings</h1>
-<h3><%=link_to "Homepage", main_path %></h3>
+<div class="title-container">
+  <h1>All Listings</h1>
+  <h3><%=link_to "New Listing", new_listing_path, class: "btn btn-default"%></h3>  
+</div>
+
 <%@listings.each do |listing| %>
 <ul>
   <li><%=link_to listing.title, listing_path(listing) %></li>

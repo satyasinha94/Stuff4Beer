@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :find_listing, only: [:show, :update, :delete]
+  before_action :find_listing, only: [:show, :edit, :update, :destroy]
 
   def index
     @listings = Listing.all
@@ -18,7 +18,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create(listing_params)
+    @listing = Listing.create(create_listing_params)
     redirect_to listing_path(@listing)
   end
 
@@ -26,11 +26,11 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing.update(listing_params)
+    @listing.update(update_listing_params)
     redirect_to listing_path(@listing)
   end
 
-  def delete
+  def destroy
     @listing.destroy
     redirect_to listings_path
   end
@@ -41,8 +41,12 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
 
-  def listing_params
+  def create_listing_params
     params.require(:listing).permit(:title, :body, :user_id, :category_id)
+  end
+
+  def update_listing_params
+    params.require(:listing).permit(:title, :body, :category_id)
   end
 
 end

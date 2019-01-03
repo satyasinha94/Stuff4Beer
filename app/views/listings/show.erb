@@ -1,23 +1,14 @@
 <h1><%=@listing.title %></h1>
-<h3><%=link_to "Homepage", main_path %></h3>
  <p>Description: <%= @listing.body %></p>
  <p>Category: <%= @listing.find_category %></p>
  <p>User: <%= @listing.find_user.name %></p>
  <p>Contact Info: <%= @listing.find_user.email %></p>
 
- <% if logged_in? %>
+
+ <% if current_user == @listing.user %>
  <%= link_to "Edit Listing", edit_listing_path %> <br> <br>
  <% end %>
 
- <% if logged_in? %>
- <%= link_to "Delete Listing", edit_listing_path %> <br> <br>
+ <% if current_user == @listing.user %>
+ <%= button_to "Delete Listing", listing_path(@listing), method: :delete %> <br> <br>
  <% end %>
-
-
-<%# <h2>Comments</h2>
-<%= link_to "Add Comment", new_comment_path %>
-<%# <%@listing.comments.each do |comment| %> %>
-<ul>
-  <%# <li><%=comment.body %></li> %>
-</ul>
-<%# <% end %> %> %>
