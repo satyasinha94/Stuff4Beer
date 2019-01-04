@@ -1,7 +1,10 @@
 
-  <h1>All Listings</h1>
+<h1>All Listings</h1>
+
+<div class="listing-index">
   <%@listings.each do |listing| %>
   <ul>
     <li><%=link_to listing.title, listing_path(listing) %> - <%= listing.date_time %></li>
   </ul>
   <% end %>
+</div>

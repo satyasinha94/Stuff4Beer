@@ -13,11 +13,11 @@ class SessionsController < ApplicationController
 
   def create #handles the POST request to /login
     @user = User.find_by(name: params[:name])
-    if @user #&& @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to @user
-    elsif !@user
-      flash[:notice] = "Can't find user!"
+    else
+      flash[:notice] = "Invalid username or password!"
       redirect_to login_path
     end
   end

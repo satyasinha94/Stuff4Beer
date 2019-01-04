@@ -1,7 +1,10 @@
 <h1>Hi <%= @user.name %></h1>
-<h2>Your listings</h2>
-<%@user.listings.each do |listing| %>
-<ul>
-    <li><%= link_to listing.title, listing_path(listing) %></li>
-</ul>
-<% end %>
+
+<div class="my-listings">
+  <h2>Your listings</h2>
+    <%@user.listings.each do |listing| %>
+    <ul>
+        <li><%= link_to listing.title, listing_path(listing) %></li>
+    </ul>
+  <% end %>
+</div>

@@ -15,11 +15,23 @@ class ListingsController < ApplicationController
 
   def show
     find_listing
+    flash[:listing] = find_listing.id
   end
 
+  # def search
+  #   @listing = Listing.find_by(title: params[:search])
+  #   redirect_to listing_path(@listing)
+  # end
+
   def create
-    @listing = Listing.create(create_listing_params)
-    redirect_to listing_path(@listing)
+    @listing = Listing.new(create_listing_params)
+    @listing.user_id = current_user.id
+    if @listing.save
+      redirect_to listing_path(@listing)
+    else
+      flash[:notice] = "Invalid Listing!"
+      render :new
+    end
   end
 
   def edit

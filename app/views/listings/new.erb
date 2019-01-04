@@ -1,4 +1,9 @@
 <h1>Create A New Listing</h1>
+
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
 <div class="listing-form">
 <%= form_for @listing do |f| %>
   <%= f.label :title %> <br>
@@ -7,8 +12,6 @@
   <%= f.text_area :body%> <br> <br>
   <%= f.label :category %> <br>
    <%=f.collection_select(:category_id, Category.all, :id, :name) %> <br> <br>
-  <%= f.label :user %> <br>
-  <%=f.collection_select(:user_id, User.all, :id, :name) %> <br> <br>
   <%= f.submit "Create Listing"%>
 <% end %>
 </div>

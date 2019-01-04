@@ -22,7 +22,7 @@ h1 {
 }
 
 a {
-  color: black;
+  color: "#2A5DB0";
   font-weight: bold;
 }
 
@@ -63,6 +63,11 @@ label {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+}
+
+.category-listing-index {
+  margin-left: 35px;
+  font-size: 1.25em;
 }
 
 /* Create four equal columns that sits next to each other */
@@ -119,6 +124,16 @@ label {
   font-weight: bold;
   margin-top: 15px;
 }
+
+.listing-index {
+  margin-left: 35px;
+  font-size: 1.25em;
+}
+
+.my-listings {
+  margin-left: 35px;
+  font-size: 1.25em;
+}
 //
 
 //comment-form styling
@@ -146,6 +161,11 @@ label {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
+  border-radius: 25px;
+}
+
+.brule img {
+  border-radius: 25%
 }
 
 .user-auth {

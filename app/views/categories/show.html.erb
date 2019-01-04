@@ -1,6 +1,9 @@
 <h1><%= @category.name %> Listings</h1>
-<% @category.listings.each do |listing| %>
-<ul>
-<li><%= link_to listing.title, listing_path(listing) %>  </li>
-</ul>
-<% end %>
+
+<div class="category-listing-index">
+  <% @category.listings.each do |listing| %>
+  <ul>
+    <li><%= link_to listing.title, listing_path(listing) %>  </li>
+  </ul>
+  <% end %>
+</div>

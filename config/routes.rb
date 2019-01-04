@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/register', to: 'sessions#create_new'
   delete '/logout',  to: 'sessions#destroy'
   get '/main', to: 'users#main'
+  get '/search', to: 'listings#search', as: 'search'
   resources :users, except: [:index]
   resources :listings
   resources :categories, only: [:index, :show]
