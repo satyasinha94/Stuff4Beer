@@ -101,6 +101,12 @@ label {
 }
 .user-form input {
   border-style: outset;
+  border-radius: 25px;
+}
+
+.user-form input[type="submit"] {
+  border-style: outset;
+  border-radius: 5px;
 }
 // end of Login/Register styling
 
@@ -118,11 +124,23 @@ label {
 }
 .listing-form input {
   border-style: outset;
+  border-radius: 25px;
+}
+
+.listing-form textarea {
+  border-style: outset;
+  border-radius: 5px;
+}
+
+.listing-form input[type="submit"] {
+  border-style: outset;
+  border-radius: 5px;
 }
 
 .listing-info p {
   font-weight: bold;
   margin-top: 15px;
+  margin-left: 35px;
 }
 
 .listing-index {
@@ -152,6 +170,11 @@ label {
 }
 .comment-form input {
   border-style: outset;
+  border-radius: 25px;
+}
+
+.comment-form textarea {
+  border-radius: 5px;
 }
 // end of comment-form styling
 
@@ -173,4 +196,20 @@ label {
 }
 .user-auth > div {
   flex: 1; /*grow*/
+  margin-left: 35px;
+  font-size: 1.25em;
+}
+
+.user-auth input {
+  color: #007bff;
+  border: none;
+  background-color: inherit;
+}
+
+.listing-comments {
+  margin-left: 35px;
+}
+
+.listing-comments p {
+  font-size: 2.25em;
 }
