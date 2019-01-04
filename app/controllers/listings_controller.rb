@@ -20,8 +20,12 @@ class ListingsController < ApplicationController
 
   def search
     @listing = Listing.find_by(title: params[:search])
-    # byebug
-    redirect_to listing_path(@listing)
+    if @listing
+      redirect_to listing_path(@listing)
+    else
+      flash[:notice] = "Listing not found!"
+      redirect_to main_path
+    end
   end
 
   def create

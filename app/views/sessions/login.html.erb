@@ -1,9 +1,10 @@
 <h1>Login</h1>
 
-
-<% if flash[:notice] %>
-<%= flash[:notice] %>
-<% end %>
+<div class="flash-login">
+  <% if flash[:notice] %>
+  <%= flash[:notice] %>
+  <% end %>
+</div>
 
 <div class="user-form">
   <%= form_tag(login_path) do %>
