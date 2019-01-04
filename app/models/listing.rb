@@ -1,7 +1,7 @@
 class Listing < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   def find_category
     category = Category.find(self.category_id)

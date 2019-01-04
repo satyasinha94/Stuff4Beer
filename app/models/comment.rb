@@ -5,5 +5,5 @@ class Comment < ApplicationRecord
   def find_user
     user = User.find(self.user_id)
   end
-  
+
 end
