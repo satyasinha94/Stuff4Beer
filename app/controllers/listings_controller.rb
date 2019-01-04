@@ -18,13 +18,14 @@ class ListingsController < ApplicationController
     flash[:listing] = find_listing.id
   end
 
-  # def search
-  #   @listing = Listing.find_by(title: params[:search])
-  #   redirect_to listing_path(@listing)
-  # end
+  def search
+    @listing = Listing.find_by(title: params[:search])
+    # byebug
+    redirect_to listing_path(@listing)
+  end
 
   def create
-    @listing = Listing.new(create_listing_params)
+    @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
     if @listing.save
       redirect_to listing_path(@listing)
@@ -38,7 +39,8 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing.update(update_listing_params)
+    @listing.update(listing_params)
+    @listing.user_id = current_user.id
     redirect_to listing_path(@listing)
   end
 
@@ -53,12 +55,8 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
 
-  def create_listing_params
-    params.require(:listing).permit(:title, :body, :user_id, :category_id)
-  end
-
-  def update_listing_params
-    params.require(:listing).permit(:title, :body, :category_id)
+  def listing_params
+    params.require(:listing).permit(:title, :body, :user_id, :category_id, :search)
   end
 
 end
