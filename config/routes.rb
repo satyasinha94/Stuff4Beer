@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/main', to: 'users#main'
   get '/search', to: 'listings#search', as: 'search'
+  root 'users#main'
   resources :users, except: [:index]
   resources :listings
   resources :categories, only: [:index, :show]
