@@ -19,7 +19,7 @@ class ListingsController < ApplicationController
   end
 
   def search
-    @listing = Listing.find_by(title: params[:search])
+    @listing = Listing.find_by(title: params[:search].strip)
     if @listing
       redirect_to listing_path(@listing)
     else
