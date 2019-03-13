@@ -27,15 +27,6 @@ end
   Listing.create(title: Faker::Beer.unique.name, body: arr.sample, user_id: rand(User.first.id..User.last.id), category_id: rand(1..6))
 end
 
-
-25.times do
-  Comment.create(body: Faker::Quote.matz, user_id: rand(1..25), listing_id: rand(1..25))
-end
-
-25.times do
-  Comment.create(body: Faker::TvShows::Simpsons.quote, user_id: rand(1..25), listing_id: rand(1..25))
-end
-
-25.times do
+100.times do
   Comment.create(body: Faker::Hipster.sentence, user_id: rand(1..25), listing_id: rand(1..25))
 end
